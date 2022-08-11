@@ -1,5 +1,5 @@
-// const Dia_chi_Dich_vu=`https://lqbao-app1.herokuapp.com`;
-const Dia_chi_Dich_vu = `http://localhost:8080`;
+const Dia_chi_Dich_vu=`https://lqbao-app1.herokuapp.com`;
+// const Dia_chi_Dich_vu = `http://localhost:8080`;
 
 const apiTivi = () => {
     return new Promise((Ket_qua, Loi) => {
