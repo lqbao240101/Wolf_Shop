@@ -1,0 +1,46 @@
+GET https://lqbao-app1.herokuapp.com/dsDienthoai
+###
+
+GET http://localhost:8080/dsDienthoai
+###
+
+POST http://localhost:8080/SendMail
+###
+
+POST http://localhost:8080/SMS
+###
+
+GET http://localhost:8080/dsMathang
+###
+
+GET http://localhost:8080/dsCuahang
+###
+
+GET http://localhost:8080/dsTivi
+###
+
+GET http://localhost:8080/ANDROID_1.png
+###
+POST  http://localhost:8080/ThemNguoidung
+Content-Type: application/json
+
+{
+    "Ten": "Trần Anh",
+    "Ma_so": "NV_3",
+    "Ten_Dang_nhap": "NV_3",
+    "Mat_khau": "NV_3",
+    "Nhom_Nguoi_dung": {
+        "Ten": "Nhân viên Bán hàng",
+        "Ma_so": "BAN_HANG"
+    }
+}
+###
+POST  http://localhost:8080/SuaNguoidung
+Content-Type: application/json
+
+{
+    "Ten": "Trần Anh",
+    "Ma_so": "NV_3",
+    "Ten_Dang_nhap": "NV_3",
+    
+}
