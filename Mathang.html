@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Wolf Shop - Foods</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Font-awesome 4.7: https://fontawesome.com/v4.7/icons/ -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/thutran.css">
+</head>
+
+<body style="font-size: 18px">
+    <div class="">
+        <div class="fixed-top text-right mr-4" style="margin-top:5rem ;" id="Th_Mua_hang">
+            <span class="text-white btn btn-outline-success border" style="cursor: pointer;" onclick="openCart()">
+                <u id="Th_Gio_hang">0</u>
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            </span>
+        </div>
+    <!-- menu -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-dark sticky-top">
+        <a class="col-xl-2 col-md-2 col-12 align-self-center text-center" id="Th_Logo" href="#">Home></a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link navbar-color" href="index.html" style="cursor: pointer;">
+                        <i class="fa fa-list-ul"aria-hidden="true"></i> Discount
+                        Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-color" href="mobile.html"><i class="fa fa-apple" aria-hidden="true"></i>
+                        Mobiles</a>
+                        <div class="nav-hover"></div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-color" href="Tivi.html">
+                        <i class="fa fa-television"aria-hidden="true"></i> Tivis</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-color" href="Mathang.html"><i class="fa fa-thumbs-o-up"
+                            aria-hidden="true"></i>
+                        Foods</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link navbar-color" href="lienhe.html"><i class="fa fa-envelope-o"
+                            aria-hidden="true"></i>
+                        Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" onsubmit="return false">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" id="Th_gtTim" onkeyup="KeyCode(event)">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="Th_Tim">Search</button>
+            </form>
+        </div>
+    </nav>
+    <!-- content -->
+    <!-- left -->
+    <div class="container-fluid pl-4 pr-4">
+        <div class="row">
+            <div class="col-12 col-md-3 col-xl-3 p-2 pr-3">
+                <h3 class="text-white bg-danger p-2 rounded">Foods</h3>
+                <div class="form-check border-bottom pt-3 pb-3 text-primary">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="r" id=""
+                            onchange="xuatSanphamChudeMathang(this.value, matHang)" value="ALL" checked="">
+                        Tất cả
+                    </label>
+                </div>
+                <div class="form-check border-bottom pt-3 pb-3 text-primary">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="r" id=""
+                            onchange="xuatSanphamChudeMathang(this.value, matHang)" value="CA_PHE">
+                        Cafe & Sinh tố
+                    </label>
+                </div>
+                <div class="form-check border-bottom pt-3 pb-3 text-primary">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="r" id=""
+                            onchange="xuatSanphamChudeMathang(this.value, matHang)" value="MON_AN">
+                        Thức ăn nhanh
+                    </label>
+                </div>
+
+                <h3 class="text-white bg-info p-2 mt-2 rounded">Sản phẩm bán chạy</h3>
+                <!-- Carousel -->
+                <div id="carouselId" class="carousel slide" data-ride="carousel">
+                </div>
+            </div>
+            <!-- right -->
+            <!-- Tivis -->
+            <div class="col-12 col-md-9 col-xl-9 p-2 pl-3">
+                <div class="row" id="Th_SanPham">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <div class=" bg-dark text-white-50 row mt-2 p-3">
+        <div class="col-xl-12 col-md-12 col-12 text-center" style="font-size: 14px;" id="Th_Footer"></div>
+        <div class="col-12 col-md-12 col-xl-12 text-center" style="font-size: 14px;">
+        </div>
+    </div>
+    <!-- Modal -->
+    <button id="showModal" type="button" class="btn btn-primary btn-lg d-none" data-toggle="modal" data-target="#modelId">
+        Launch
+    </button>
+    <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h5 class="modal-title text-primary" id="modalTitle">Modal title</h5>
+                    <button type="button" id="Th_Close" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center" id="modalBody">
+                    Body
+                </div>
+                <div class="modal-footer"></div>
+            </div>
+        </div>
+    </div>
+    <script src="js/api.js"></script>
+    <script src="js/format.js"></script>
+    <script src="js/libs.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        if (sessionStorage.getItem('carts') != undefined) {
+            carts = JSON.parse(sessionStorage.getItem("carts"));
+            Th_Gio_hang.innerHTML = `<u>${carts.length}</u>`;
+        }
+
+                apiMathang().then(result => {
+                    matHang = result;
+                    xuatDanhsachBanchay(matHang, carouselId)
+                    Xuat_San_Pham(matHang, "Foods", Th_SanPham, );
+                }).catch(err => {
+                    console.log(err);
+                })
+
+        function KeyCode(event) {
+            if (event.keyCode == 13) {
+                let gtTim = event.target.value;
+                if (gtTim == "") {
+                    Xuat_San_Pham(matHang, "Foods", Th_SanPham);
+                    Th_gtTim.value = '';
+                    return false;
+                }
+                let dsTim = matHang.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()))
+                Xuat_San_Pham(dsTim, `Tìm theo: ${gtTim}`, Th_SanPham);
+            }
+        }
+
+        Th_Tim.onclick = () => {
+            let gtTim = Th_gtTim.value.trim();
+            if (gtTim == "") {
+                Xuat_San_Pham(matHang, "Foods", Th_SanPham);
+                Th_gtTim.value = '';
+                return false;
+            }
+            let dsTim = matHang.filter(x => x.Ten.toLowerCase().includes(gtTim.toLowerCase()));
+            Xuat_San_Pham(dsTim, `Tìm theo: ${gtTim}`, Th_SanPham);
+        }
+    </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+
+</html>
